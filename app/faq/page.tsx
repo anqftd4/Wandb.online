@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import { ChevronDown, Phone, HelpCircle, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Reveal from '@/components/Reveal';
-import StickyCallBar from '@/components/StickyCallBar';
-import FloatingCallButton from '@/components/FloatingCallButton';
+import { Reveal } from '@/components/Reveal';
+import { StickyCallBar } from '@/components/StickyCallBar';
+import { FloatingCallButton } from '@/components/FloatingCallButton';
 import { siteConfig } from '@/lib/siteConfig';
 
 interface FAQItem {
@@ -276,18 +276,18 @@ export default function FAQPage() {
                   Our team is here to help. Call us Monday through Friday, 9AM to 6PM EST, and we'll answer any questions you have about finding the right internet or TV service.
                 </p>
                 <motion.a
-                  href={siteConfig.contact.phoneTel}
+                  href={siteConfig.phoneLink}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center gap-3 bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
                 >
                   <Phone className="w-6 h-6" />
-                  {siteConfig.contact.phone}
+                  {siteConfig.phone}
                 </motion.a>
                 <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
                   Or email us at{' '}
-                  <a href={siteConfig.contact.emailHref} className="text-brand-600 hover:underline">
-                    {siteConfig.contact.email}
+                  <a href={siteConfig.emailLink} className="text-brand-600 hover:underline">
+                    {siteConfig.email}
                   </a>
                 </p>
               </div>

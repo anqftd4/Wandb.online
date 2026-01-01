@@ -2,9 +2,9 @@
 
 import { Phone, Mail, Clock, MapPin, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Reveal from '@/components/Reveal';
-import StickyCallBar from '@/components/StickyCallBar';
-import FloatingCallButton from '@/components/FloatingCallButton';
+import { Reveal } from '@/components/Reveal';
+import { StickyCallBar } from '@/components/StickyCallBar';
+import { FloatingCallButton } from '@/components/FloatingCallButton';
 import { siteConfig } from '@/lib/siteConfig';
 
 const contactMethods = [
@@ -12,16 +12,16 @@ const contactMethods = [
     icon: Phone,
     title: 'Call Us',
     description: 'Speak directly with our team for immediate assistance',
-    value: siteConfig.contact.phone,
-    href: siteConfig.contact.phoneTel,
+    value: siteConfig.phone,
+    href: siteConfig.phoneLink,
     primary: true,
   },
   {
     icon: Mail,
     title: 'Email Us',
     description: 'Send us a message and we\'ll respond within 24 hours',
-    value: siteConfig.contact.email,
-    href: siteConfig.contact.emailHref,
+    value: siteConfig.email,
+    href: siteConfig.emailLink,
     primary: false,
   },
 ];
@@ -131,7 +131,7 @@ export default function ContactPage() {
                     </h3>
                   </div>
                   <p className="text-lg text-gray-600 dark:text-gray-300">
-                    {siteConfig.contact.hours}
+                    {siteConfig.hours}
                   </p>
                   <p className="mt-2 text-gray-500 dark:text-gray-400">
                     We try to respond to all emails within 24 business hours.
@@ -215,13 +215,13 @@ export default function ContactPage() {
                   Our team can help you understand what's available at your address and answer any questions you have.
                 </p>
                 <motion.a
-                  href={siteConfig.contact.phoneTel}
+                  href={siteConfig.phoneLink}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center gap-3 bg-white text-brand-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-shadow"
                 >
                   <Phone className="w-6 h-6" />
-                  {siteConfig.contact.phone}
+                  {siteConfig.phone}
                 </motion.a>
               </div>
             </Reveal>

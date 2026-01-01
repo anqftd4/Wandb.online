@@ -3,9 +3,9 @@
 import { Metadata } from 'next';
 import { Shield, Phone, Users, Eye, CheckCircle, ArrowRight, Zap, Heart, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Reveal from '@/components/Reveal';
-import StickyCallBar from '@/components/StickyCallBar';
-import FloatingCallButton from '@/components/FloatingCallButton';
+import { Reveal } from '@/components/Reveal';
+import { StickyCallBar } from '@/components/StickyCallBar';
+import { FloatingCallButton } from '@/components/FloatingCallButton';
 import { siteConfig } from '@/lib/siteConfig';
 
 const values = [
@@ -271,13 +271,13 @@ export default function WhyWandbPage() {
                   Our team is here Monday through Friday, 9AM to 6PM EST. Give us a call—no pressure, just help.
                 </p>
                 <motion.a
-                  href={siteConfig.contact.phoneTel}
+                  href={siteConfig.phoneLink}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center gap-3 bg-white text-brand-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-shadow"
                 >
                   <Phone className="w-6 h-6" />
-                  {siteConfig.contact.phone}
+                  {siteConfig.phone}
                 </motion.a>
               </div>
             </Reveal>
